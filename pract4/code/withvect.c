@@ -31,7 +31,7 @@ void IdentityMatrix(float *matrix) {
     }
 }
 
-float CountMaxRowSum(float *A){
+float CountMaxRowSum(float *matrix){
     float maxRow = 0;
     for (int i = 0; i < n; i++) {
         float tmp = 0;
@@ -45,7 +45,7 @@ float CountMaxRowSum(float *A){
     return maxRow;
 }
 
-float CountMaxColumnSum(float *A){
+float CountMaxColumnSum(float *matrix){
     float maxColumn = 0;
     for (int i = 0; i < n; i++) {
         float tmp = 0;
@@ -77,7 +77,7 @@ void SubMatrixes(float *matrix1, float *matrix2, float *res){
     //sub values
     __m128 subMatr = _mm_sub_ps(maxtr1mm, maxtr2mm);
 
-    /write values in res by aligned address
+    //write values in res by aligned address
     _mm_store_ps(res, subMatr);
 }
 
